@@ -50,4 +50,37 @@ const styles = StyleSheet.create({
     left: 0,
     position: 'absolute',
   },
+  container: {
+  flex: 1,
+  justifyContent: 'center',
+  alignItems: 'center',
+  backgroundColor: '#000000',
+  padding: 20,
+},
+
+title: {
+  color: '#FF0000',
+  fontSize: 32,
+  fontWeight: 'bold',
+  letterSpacing: 2,
+  marginBottom: 10,
+  textShadowColor: '#8B0000',
+  textShadowOffset: { width: 0, height: 0 },
+  textShadowRadius: 15,
+},
+
+subtitle: {
+  color: '#FF4C4C',
+  fontSize: 16,
+  marginBottom: 30,
+  textAlign: 'center',
+},
+
+welcome: {
+  color: '#FF0000',
+  fontSize: 20,
+  fontWeight: '600',
+  textAlign: 'center',
+  marginTop: 20,
+}
 });
