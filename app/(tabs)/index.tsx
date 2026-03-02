@@ -6,7 +6,11 @@ import ParallaxScrollView from '@/components/parallax-scroll-view';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Link } from 'expo-router';
+//...//
+import { useEffect, useRef } from 'react';
+import { Animated } from 'react-native';
 
+//,,//
 export default function HomeScreen() {
 return (
   <ParallaxScrollView
@@ -15,9 +19,9 @@ return (
   >
     <ThemedView style={styles.container}>
       
-      <ThemedText style={styles.title}>
-        🔐 CONTROL-SEGURITY
-      </ThemedText>
+     <Animated.Text style={[styles.title, { opacity: fadeAnim }]}>
+  🔐 CONTROL-SEGURITY
+</Animated.Text>
 
       <ThemedText style={styles.subtitle}>
         Sistema de Monitoreo y Control de Accesos
@@ -32,8 +36,29 @@ return (
 );
 
 }
+//--//
+const fadeAnim = useRef(new Animated.Value(0)).current;
+
+useEffect(() => {
+  Animated.loop(
+    Animated.sequence([
+      Animated.timing(fadeAnim, {
+        toValue: 1,
+        duration: 1000,
+        useNativeDriver: true,
+      }),
+      Animated.timing(fadeAnim, {
+        toValue: 0.3,
+        duration: 1000,
+        useNativeDriver: true,
+      }),
+    ])
+  ).start();
+}, []);
+
 
 const styles = StyleSheet.create({
+  
   titleContainer: {
     flexDirection: 'row',
     alignItems: 'center',
