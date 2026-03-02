@@ -8,45 +8,26 @@ import { ThemedView } from '@/components/themed-view';
 import { Link } from 'expo-router';
 
 export default function HomeScreen() {
-  return ( <ParallaxScrollView
-    headerBackgroundColor={{ light: '#0F2027', dark: '#0F2027' }}
-    headerImage={
-      <Image
-        source={require('@/assets/images/partial-react-logo.png')}
-        style={styles.reactLogo}
-      />
-    }>
-
-    {/* TÍTULO PRINCIPAL */}
-    <ThemedView style={styles.titleContainer}>
-      <ThemedText type="title">🔐 Control-Segurity</ThemedText>
-      <ThemedText>Monitoreo y Control de Accesos</ThemedText>
-    </ThemedView>
-
-    {/* SECCIÓN 1 - ACCESOS */}
-    <ThemedView style={styles.stepContainer}>
-      <ThemedText type="subtitle">📋 Registro de Accesos</ThemedText>
-      <ThemedText>
-        Administra entradas y salidas del personal en tiempo real.
+return (
+  <ParallaxScrollView
+    headerBackgroundColor={{ light: '#000000', dark: '#000000' }}
+    style={{ backgroundColor: '#000000' }}
+  >
+    <ThemedView style={styles.container}>
+      
+      <ThemedText style={styles.title}>
+        🔐 CONTROL-SEGURITY
       </ThemedText>
-    </ThemedView>
 
-    {/* SECCIÓN 2 - USUARIOS */}
-    <ThemedView style={styles.stepContainer}>
-      <ThemedText type="subtitle">👤 Gestión de Usuarios</ThemedText>
-      <ThemedText>
-        Crea, edita y controla permisos de usuarios (Admin, Guardia, Empleado).
+      <ThemedText style={styles.subtitle}>
+        Sistema de Monitoreo y Control de Accesos
       </ThemedText>
-    </ThemedView>
 
-    {/* SECCIÓN 3 - REPORTES */}
-    <ThemedView style={styles.stepContainer}>
-      <ThemedText type="subtitle">📊 Reportes</ThemedText>
-      <ThemedText>
-        Visualiza reportes diarios, semanales y mensuales de actividad.
+      <ThemedText style={styles.welcome}>
+        Bienvenido al sistema
       </ThemedText>
-    </ThemedView>
 
+    </ThemedView>
   </ParallaxScrollView>
 );
 
