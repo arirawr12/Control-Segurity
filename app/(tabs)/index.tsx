@@ -20,6 +20,7 @@ export default function HomeScreen() {
       <ThemedView style={styles.titleContainer}>
         <ThemedText type="title">Mi aplicacion</ThemedText>
         <ThemedText type="title">Control-Segurity</ThemedText>
+        <ThemedText type="title">Control-Segurity </ThemedText>
         <HelloWave />
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
