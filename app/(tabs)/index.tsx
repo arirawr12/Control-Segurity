@@ -10,7 +10,7 @@ export default function HomeScreen() {
       {/* HEADER: LOGO + TITULO ARRIBA IZQUIERDA */}
       <View style={styles.header}>
         <Image
-          source={require('@/assets/images/logo.jpeg')} // tu logo
+          source={require('control-segurity\assets\images\image\logo.jpeg')} // tu logo
           style={styles.appLogo}
         />
         <Text style={styles.title}>...</Text>
