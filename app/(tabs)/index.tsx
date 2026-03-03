@@ -42,8 +42,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     position: 'absolute',
-    top: 40,
-    left: 20,
+    top: 60,
+    left: 40,
   },
 
   logo: {
