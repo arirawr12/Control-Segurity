@@ -3,23 +3,31 @@ import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'reac
 import { router } from 'expo-router';
 
 export default function RegisterScreen() {
+    
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleRegister = () => {
-    if (!name || !email || !password) {
-      Alert.alert('Error', 'Todos los campos son obligatorios');
-      return;
-    }
+ const handleRegister = () => {
+  if (!name || !email || !password) {
+    Alert.alert('Error', 'Todos los campos son obligatorios');
+    return;
+  }
 
-    Alert.alert('Cuenta creada', 'Usuario registrado correctamente');
-    router.replace('/');
-  };
+  Alert.alert('Cuenta creada', `Bienvenido, ${name}!`);
+
+  // Enviamos el nombre al Home usando query params
+  router.replace({
+    pathname: '/',
+    params: { userName: name },
+  });
+};
 
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Crear Cuenta</Text>
+
+      
 
       <TextInput
         placeholder="Nombre"
@@ -50,7 +58,14 @@ export default function RegisterScreen() {
       <TouchableOpacity style={styles.button} onPress={handleRegister}>
         <Text style={styles.buttonText}>Registrarse</Text>
       </TouchableOpacity>
+      <TouchableOpacity 
+  style={styles.button}
+  onPress={() => router.back()}
+>
+  <Text style={styles.buttonText}>Regresar</Text>
+</TouchableOpacity>
     </View>
+    
   );
 }
 
