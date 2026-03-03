@@ -1,21 +1,17 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { router } from 'expo-router';
 
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
 
-      {/* HEADER CON NOMBRE DE LA APP E IMAGEN */}
+      {/* HEADER: TITULO ARRIBA IZQUIERDA */}
       <View style={styles.header}>
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')} // tu logo pequeño
-          style={styles.appLogo}
-        />
         <Text style={styles.appName}>Control-Segurity</Text>
       </View>
 
-      {/* MENSAJE PRINCIPAL */}
+      {/* MENSAJE CENTRAL */}
       <Text style={styles.title}>Bienvenido al sistema</Text>
 
       {/* BOTÓN CREAR CUENTA */}
@@ -27,32 +23,26 @@ export default function HomeScreen() {
       </TouchableOpacity>
     </View>
   );
-  const styles = StyleSheet.create({
+}
+
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#000',
     justifyContent: 'center',
     alignItems: 'center',
-    paddingTop: 80, // deja espacio para header
+    paddingTop: 80, // espacio para el header
   },
 
   header: {
-    flexDirection: 'row',
-    alignItems: 'center',
     position: 'absolute',
     top: 40,
     left: 20,
   },
 
-  appLogo: {
-    width: 35,
-    height: 35,
-    marginRight: 10,
-  },
-
   appName: {
     color: '#FF0000',
-    fontSize: 20,
+    fontSize: 24,
     fontWeight: 'bold',
   },
 
@@ -77,4 +67,3 @@ export default function HomeScreen() {
     textAlign: 'center',
   },
 });
-}
