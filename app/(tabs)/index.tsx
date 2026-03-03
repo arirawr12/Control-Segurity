@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     position: 'absolute',
     top: 40,
-    left: 20,
+    left: 60,
   },
 
   logo: {
