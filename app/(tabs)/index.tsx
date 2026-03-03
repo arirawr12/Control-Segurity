@@ -43,14 +43,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     position: 'absolute',
     top: 40,
-    left: 60,
+    left: 20,
   },
 
-  logo: {
-    width: 100,
-    height: 100,
-    marginRight: 40,
-  },
+ logo: {
+  width: 120,        // ancho grande
+  height: 120,       // alto grande
+  resizeMode: 'contain', // mantiene proporción de la imagen
+  position: 'absolute',  // lo colocamos arriba
+  top: 40,               // distancia desde el borde superior
+  left: 20,              // distancia desde el borde izquierdo
+}
 
   appName: {
     color: '#FF0000',
