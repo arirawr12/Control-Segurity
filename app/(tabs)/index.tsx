@@ -49,8 +49,8 @@ const styles = StyleSheet.create({
   logo: {
     width: 70,
     height: 50,
-    borderRadius: 10,
-    marginRight: 20,
+    borderRadius: 50,
+    marginRight: 40,
   },
 
   appName: {
