@@ -42,15 +42,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     position: 'absolute',
-    top: 100,
+    top: 110,
     left: 100,
   },
 
   logo: {
     width: 70,
     height: 50,
-    borderRadius: 100,
-    marginRight: 100,
+    borderRadius: 50,
+    marginRight: 40,
   },
 
   appName: {
