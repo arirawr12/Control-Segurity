@@ -10,7 +10,7 @@ export default function HomeScreen() {
       {/* HEADER: LOGO + TITULO ARRIBA IZQUIERDA */}
       <View style={styles.header}>
         <Image
-          source={require("@CONTROL-SEGURITY/control-segurity/assets\images/logoo.jpeg")}
+          source={require('../../assets/images/logoo.jpeg')}
           style={styles.logo}
         />
         <Text style={styles.appName}>Control-Segurity</Text>
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
   },
 
   logo: {
-    width: 35,
+    width: 60,
     height: 35,
     borderRadius: 5,
     marginRight: 10,
