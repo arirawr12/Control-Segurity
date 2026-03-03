@@ -13,18 +13,17 @@ export default function HomeScreen() {
           source={require('../../assets/images/logoo.jpeg')}
           style={styles.logo}
         />
-        <Text style={styles.appName}>Control-Segurity</Text>
       </View>
 
       {/* MENSAJE CENTRAL */}
-      <Text style={styles.title}>Bienvenido al sistema</Text>
+      <Text style={styles.title}>Bienvenido a Control Segurity</Text>
 
       {/* BOTÓN CREAR CUENTA */}
       <TouchableOpacity 
         style={styles.button}
         onPress={() => router.push('/register')}
       >
-        <Text style={styles.buttonText}>Crear Cuenta</Text>
+        <Text style={styles.buttonText}>Registrarse</Text>
       </TouchableOpacity>
     </View>
   );
@@ -48,8 +47,8 @@ const styles = StyleSheet.create({
   },
 
   logo: {
-    width: 60,
-    height: 35,
+    width: 70,
+    height: 50,
     borderRadius: 5,
     marginRight: 10,
   },
