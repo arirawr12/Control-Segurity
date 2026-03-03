@@ -10,10 +10,10 @@ export default function HomeScreen() {
       {/* HEADER: LOGO + TITULO ARRIBA IZQUIERDA */}
       <View style={styles.header}>
         <Image
-          source={require('@/assets/images/partial-react-logo.png')} // tu logo
+          source={require('C:\Users\angel\Downloads\WhatsApp Image 2026-03-02 at 6.26.17 PM.jpeg')} // tu logo
           style={styles.appLogo}
         />
-        <Text style={styles.title}>CONTROL-SEGURITY</Text>
+        <Text style={styles.title}>...</Text>
       </View>
 
       {/* MENSAJE CENTRAL */}
