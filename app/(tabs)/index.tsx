@@ -42,14 +42,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     position: 'absolute',
-    top: 110,
-    left: 100,
+    top: 40,
+    left: 20,
   },
 
   logo: {
-    width: 70,
-    height: 50,
-    borderRadius: 50,
+    width: 100,
+    height: 100,
     marginRight: 40,
   },
 
