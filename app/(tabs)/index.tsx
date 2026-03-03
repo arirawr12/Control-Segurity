@@ -3,7 +3,11 @@ import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { router } from 'expo-router';
 
+ 
+
+
 export default function HomeScreen() {
+  
   return (
     <View style={styles.container}>
 
@@ -16,7 +20,7 @@ export default function HomeScreen() {
       </View>
 
       {/* MENSAJE CENTRAL */}
-      <Text style={styles.title}>Bienvenido a Control Segurity</Text>
+      <Text style={styles.title}>Bienvenido a Control Zegurity</Text>
 
       {/* BOTÓN CREAR CUENTA */}
       <TouchableOpacity 
@@ -45,15 +49,16 @@ const styles = StyleSheet.create({
     top: 40,
     left: 20,
   },
+  
 
- logo: {
-  width: 120,        // ancho grande
-  height: 120,       // alto grande
+  logo: {
+    width: 120,        // ancho grande
+  height: 70,       // alto grande
   resizeMode: 'contain', // mantiene proporción de la imagen
   position: 'absolute',  // lo colocamos arriba
-  top: 40,               // distancia desde el borde superior
-  left: 20,              // distancia desde el borde izquierdo
-}
+  top: 0,               // distancia desde el borde superior
+  left: 0,               // distancia desde la izquierda 
+  },
 
   appName: {
     color: '#FF0000',
