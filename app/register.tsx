@@ -6,31 +6,58 @@ export default function RegisterScreen() {
     
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
   const [password, setPassword] = useState('');
 
- const handleRegister = () => {
-  if (!name || !email || !password) {
-    Alert.alert('Error', 'Todos los campos son obligatorios');
-    return;
-  }
+  const handleRegister = () => {
 
-  Alert.alert('Cuenta creada', `Bienvenido, ${name}!`);
+    // VALIDAR CAMPOS VACÍOS
+    if (!name || !email || !phone || !password) {
+      Alert.alert('Error', 'Todos los campos son obligatorios');
+      return;
+    }
 
-  // Enviamos el nombre al Home usando query params
-  router.replace({
-    pathname: '/',
-    params: { userName: name },
-  });
-};
+    // VALIDAR NOMBRE (mínimo 8 caracteres)
+    if (name.length < 8) {
+      Alert.alert('Error', 'El nombre debe tener al menos 8 caracteres');
+      return;
+    }
+
+    // VALIDAR CORREO (solo gmail)
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+    if (!emailRegex.test(email)) {
+      Alert.alert('Error', 'El correo debe ser válido y terminar en @gmail.com');
+      return;
+    }
+
+    // VALIDAR TELÉFONO (exactamente 10 números)
+    const phoneRegex = /^[0-9]{10}$/;
+    if (!phoneRegex.test(phone)) {
+      Alert.alert('Error', 'El teléfono debe tener exactamente 10 dígitos');
+      return;
+    }
+
+    // VALIDAR CONTRASEÑA
+    if (password.length < 6) {
+      Alert.alert('Error', 'La contraseña debe tener al menos 6 caracteres');
+      return;
+    }
+
+    // SI TODO ESTÁ CORRECTO
+    Alert.alert('Cuenta creada', `Bienvenido, ${name}!`);
+
+    router.replace({
+      pathname: '/',
+      params: { userName: name },
+    });
+  };
 
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Crear Cuenta</Text>
 
-      
-
       <TextInput
-        placeholder="Nombre"
+        placeholder="Nombre (mínimo 8 caracteres)"
         placeholderTextColor="#888"
         style={styles.input}
         value={name}
@@ -38,7 +65,7 @@ export default function RegisterScreen() {
       />
 
       <TextInput
-        placeholder="Correo electrónico"
+        placeholder="Correo electrónico (@gmail.com)"
         placeholderTextColor="#888"
         style={styles.input}
         value={email}
@@ -47,7 +74,17 @@ export default function RegisterScreen() {
       />
 
       <TextInput
-        placeholder="Contraseña"
+        placeholder="Teléfono (10 dígitos)"
+        placeholderTextColor="#888"
+        style={styles.input}
+        value={phone}
+        onChangeText={setPhone}
+        keyboardType="numeric"
+        maxLength={10}
+      />
+
+      <TextInput
+        placeholder="Contraseña (mínimo 6 caracteres)"
         placeholderTextColor="#888"
         style={styles.input}
         value={password}
@@ -58,14 +95,11 @@ export default function RegisterScreen() {
       <TouchableOpacity style={styles.button} onPress={handleRegister}>
         <Text style={styles.buttonText}>Registrarse</Text>
       </TouchableOpacity>
-      <TouchableOpacity 
-  style={styles.button}
-  onPress={() => router.back()}
->
-  <Text style={styles.buttonText}>Regresar</Text>
-</TouchableOpacity>
+
+      <TouchableOpacity style={styles.button} onPress={() => router.back()}>
+        <Text style={styles.buttonText}>Regresar</Text>
+      </TouchableOpacity>
     </View>
-    
   );
 }
 
